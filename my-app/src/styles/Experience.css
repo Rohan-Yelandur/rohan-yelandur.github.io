@@ -1,6 +1,6 @@
 .experience {
     background-color: var(--secondary-color);
-    padding: 120px 0;
+    padding: 50px 0;
     width: 100%;
     box-sizing: border-box;
   }
@@ -123,3 +123,29 @@
       padding: 3px 8px;
     }
   }
+
+  /* Add these new styles to your Experience.css */
+.timeline-content {
+  position: relative;
+  width: calc(50% - 40px);
+  padding: 0; /* Remove padding as it will be on the overlay */
+  background-color: transparent; /* Make background transparent */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure the border-radius clips the image */
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better text contrast */
+  padding: 25px;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1px);
+}
+
+/* For cards without a background image, use a light background */
+.timeline-content:not([style*="url"]) .content-overlay {
+  background-color: rgba(255, 255, 255, 0.9);
+}

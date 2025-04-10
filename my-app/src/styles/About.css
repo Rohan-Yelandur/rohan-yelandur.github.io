@@ -1,63 +1,48 @@
-.about {
-    background-color: var(--light-color);
-    padding: 120px 0;
-  }
-  
+/* Update the about-content class to ensure proper left-right layout */
+.about-content {
+  display: flex;
+  flex-direction: row; /* Explicitly set row direction */
+  align-items: flex-start; /* Align items at the top */
+  gap: 40px; /* Space between image and text */
+  margin-top: 50px;
+  width: 100%;
+}
+
+/* Keep image on the left side */
+.about-image {
+  flex: 0 0 auto; /* Don't allow the image to grow or shrink */
+  min-width: 200px;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to the top */
+  margin-right: 20px; /* Extra space between image and text */
+}
+
+/* Make text take up more space on the right */
+.about-text {
+  flex: 1; /* Allow text to take remaining space */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .about-content {
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack vertically on mobile */
     align-items: center;
-    gap: 40px;
-    margin-top: 50px;
   }
   
   .about-image {
-    flex: 1;
-    min-width: 300px;
+    margin-right: 0;
+    margin-bottom: 30px;
   }
-  
-  .placeholder-image {
-    width: 100%;
-    padding-bottom: 100%; /* 1:1 Aspect Ratio */
-    background-color: #e0e0e0;
-    border-radius: 10px;
-  }
-  
-  .about-text {
-    flex: 2;
-    min-width: 300px;
-  }
-  
-  .about-text p {
-    margin-bottom: 20px;
-    line-height: 1.8;
-  }
-  
-  .about-details {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 30px;
-  }
-  
-  .detail-item {
-    flex: 1;
-    min-width: 200px;
-  }
-  
-  .detail-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-  }
-  
-  @media (max-width: 768px) {
-    .about-content {
-      flex-direction: column;
-    }
-    
-    .about-image {
-      width: 70%;
-      margin: 0 auto;
-    }
-  }
+}
+
+/* Style for the actual image element */
+.profile-image {
+  width: 100%; /* Make image responsive within its container */
+  max-width: 250px; /* Control maximum size */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+  object-fit: cover; /* Ensures proper image rendering */
+}

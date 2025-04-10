@@ -42,7 +42,7 @@ function Projects() {
                   ))}
                 </div>
                 <a href={project.link} className="btn btn-sm" target="_blank" rel="noopener noreferrer">
-                  View Project
+                  Source code
                 </a>
               </div>
             </div>

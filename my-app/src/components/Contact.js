@@ -44,9 +44,8 @@ function Contact() {
             <div className="contact-item">
               <h3>Social Media</h3>
               <div className="social-links">
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a>
-                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-link">Twitter</a>
+                <a href="https://github.com/rohan-yelandur" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
+                <a href="https://linkedin.com/in/rohan-yelandur" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a>
               </div>
             </div>
           </div>

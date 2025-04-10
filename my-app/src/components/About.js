@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/About.css';
+import profilePic from '../assets/profile_pic.jpg';
 
 function About() {
   return (
@@ -8,32 +9,26 @@ function About() {
         <h2>About Me</h2>
         <div className="about-content">
           <div className="about-image">
-            {/* Replace with your image */}
-            <div className="placeholder-image"></div>
+            <img src={profilePic} alt="Your Name" className="profile-image" />
           </div>
           <div className="about-text">
             <p>
-              Hello! I'm a passionate developer with a strong background in web development. 
-              I specialize in creating responsive and intuitive user interfaces that deliver 
-              exceptional user experiences.
+              Hi, I'm a passionate developer and problem solver with expertise in machine learning, artificial intelligence, web development, and computer architecture. I thrive on tackling complex challenges and turning innovative ideas into reality.
             </p>
             <p>
-              With expertise in modern JavaScript frameworks and a keen eye for design, 
-              I turn complex problems into elegant solutions. I'm dedicated to writing clean, 
-              maintainable code and staying up-to-date with the latest industry trends.
+              My experience spans building intelligent systems, designing scalable web applications, and working on cutting-edge computer architecture projects. I enjoy staying at the forefront of technology and continuously improving my skills to deliver impactful solutions.
             </p>
             <p>
-              When I'm not coding, you can find me exploring new technologies, contributing 
-              to open-source projects, or enjoying outdoor activities.
+              Outside of work, I'm an Eagle Scout who loves exploring the outdoors. Whether it's hiking, camping, or simply enjoying nature, I find inspiration in the world around me. I'm also an avid runner and fitness enthusiast, always striving to push my limits and maintain a healthy lifestyle.
+            </p>
+            <p>
+              With a strong foundation in technology and a passion for learning, I'm excited to take on new challenges and make a meaningful impact in the tech industry.
             </p>
             <div className="about-details">
               <div className="detail-item">
                 <h3>Education</h3>
-                <p>B.S. Computer Science, Your University</p>
-              </div>
-              <div className="detail-item">
-                <h3>Experience</h3>
-                <p>5+ years of professional development experience</p>
+                <p>B.S. Computer Science, The Univeristy of Texas at Austin </p>
+                <h2>Hook 'Em🤘</h2>
               </div>
             </div>
           </div>
