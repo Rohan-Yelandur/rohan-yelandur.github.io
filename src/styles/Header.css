@@ -1,0 +1,142 @@
+.header {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* Allow clicks to pass through header area except the bubble */
+}
+
+.bubble-container {
+  pointer-events: auto; /* Re-enable pointer events for the bubble */
+}
+
+.nav-bubble {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
+  padding: 15px 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px; /* Even spacing between items */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+  background-color: rgba(108, 99, 255, 0.1);
+}
+
+/* Hide the nav toggle by default */
+.nav-toggle {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header {
+    bottom: 20px;
+  }
+  
+  .nav-bubble {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    position: relative;
+  }
+  
+  .nav-bubble.open {
+    max-height: 300px;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    padding: 15px 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .nav-bubble.open .nav-links {
+    opacity: 1;
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  .nav-toggle span {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-bubble.open .nav-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    left: auto;
+    transform: none;
+  }
+  
+  .nav-bubble.open .nav-toggle span {
+    background-color: var(--text-color);
+  }
+  
+  .nav-bubble.open .nav-toggle span:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .nav-bubble.open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-bubble.open .nav-toggle span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

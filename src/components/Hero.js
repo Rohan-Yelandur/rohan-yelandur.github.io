@@ -29,14 +29,14 @@ function Hero() {
       particlesRef.current = [];
       const particleCount = Math.floor((canvas.width * canvas.height) / 4500);
       
-      for (let i = 0; i < particleCount; i++) {
+      for (let i = 0; i < particleCount; i++) { 
         particlesRef.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           size: Math.random() * 2 + 1,
           speedX: Math.random() * 1 - 0.5,
           speedY: Math.random() * 1 - 0.5,
-          color: 'rgba(108, 99, 255, 0.5)' // match your primary color with transparency
+          color: 'rgba(122, 31, 186, 0.5)' // match your primary color with transparency
         });
       }
     };
@@ -77,6 +77,21 @@ function Hero() {
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fillStyle = particle.color;
         ctx.fill();
+        
+        // Add connecting lines to cursor when nearby
+        const connectionDistance = 150; // Distance to draw lines
+        if (distance < connectionDistance) {
+          // Calculate opacity based on distance (fade out with distance)
+          const opacity = 1 - (distance / connectionDistance);
+          
+          // Draw line from particle to cursor
+          ctx.beginPath();
+          ctx.moveTo(particle.x, particle.y);
+          ctx.lineTo(mouseRef.current.x, mouseRef.current.y);
+          ctx.strokeStyle = `rgba(108, 99, 255, ${opacity * 0.5})`; // Match particle color
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
       });
       
       animationFrameId = requestAnimationFrame(animate);
@@ -103,6 +118,10 @@ function Hero() {
         <h1>Hi, I'm <span className="highlight">Rohan Yelandur</span></h1>
         <p className="hero-subtitle">Software Engineer | AI Enthusiast | Problem Solver</p>
         <p className="hero-description">I create meaningful applications to solve real problems.</p>
+        <div className="hero-buttons">
+          <a href="#projects" className="btn">View my work</a>
+          <a href="#contact" className="btn">Let's connect</a>
+        </div>
       </div>
     </section>
   );

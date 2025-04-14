@@ -18,7 +18,16 @@
   z-index: 1;
   pointer-events: none;
   background-color: var(--secondary-color);
-  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-image: linear-gradient(135deg, #d5e5ff 0%, #b4c9ea 25%, #97a9cc 50%, #8f88d1 75%, #7a7cbe 100%);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 2rem;
+  animation: fadeInUp 1s ease 0.6s;
+  animation-fill-mode: both;
 }
 
 .hero-content {
@@ -60,17 +69,30 @@
     animation-fill-mode: both;
   }
   
+  .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
   .btn-outline {
     background-color: transparent;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
   }
-  
-  .btn-outline:hover {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  
+
   @keyframes fadeInDown {
     from {
       opacity: 0;
@@ -93,12 +115,19 @@
     }
   }
   
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.2rem;
-    }
+/* For mobile responsiveness */
+@media (max-width: 576px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
   }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

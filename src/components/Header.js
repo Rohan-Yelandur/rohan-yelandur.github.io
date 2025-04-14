@@ -6,12 +6,9 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="container header-container">
-        {/* Logo area - empty for now */}
-        <div className="logo-placeholder"></div>
-        
-        {/* Navigation on the left */}
-        <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+      <div className="bubble-container">
+        {/* Navigation bubble */}
+        <nav className={`nav-bubble ${isMenuOpen ? 'open' : ''}`}>
           <ul className="nav-links">
             <li><a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
             <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
