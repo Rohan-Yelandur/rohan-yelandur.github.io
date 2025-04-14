@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.55acf7e9.css",
-    "main.js": "/static/js/main.c5d5f209.js",
+    "main.css": "/static/css/main.7b6e89c9.css",
+    "main.js": "/static/js/main.cc7f8ebd.js",
     "static/media/profile_pic.jpg": "/static/media/profile_pic.cd2959f3287431b319d6.jpg",
     "static/media/ut-logo.jpg": "/static/media/ut-logo.ec65f134784e6209f730.jpg",
     "static/media/amazon-logo.webp": "/static/media/amazon-logo.e60554401df4b7d46763.webp",
     "index.html": "/index.html",
-    "main.55acf7e9.css.map": "/static/css/main.55acf7e9.css.map",
-    "main.c5d5f209.js.map": "/static/js/main.c5d5f209.js.map"
+    "main.7b6e89c9.css.map": "/static/css/main.7b6e89c9.css.map",
+    "main.cc7f8ebd.js.map": "/static/js/main.cc7f8ebd.js.map"
   },
   "entrypoints": [
-    "static/css/main.55acf7e9.css",
-    "static/js/main.c5d5f209.js"
+    "static/css/main.7b6e89c9.css",
+    "static/js/main.cc7f8ebd.js"
   ]
 }
